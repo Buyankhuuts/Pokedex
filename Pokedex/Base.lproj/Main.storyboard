@@ -93,11 +93,27 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wbW-Zj-2V9">
+                                <rect key="frame" x="186" y="112" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dx1-0n-b9f">
+                                <rect key="frame" x="176" y="621" width="69" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Catch!"/>
+                                <connections>
+                                    <action selector="catchThePokemon:" destination="yFp-uv-eEo" eventType="touchUpInside" id="4QX-Vl-iY3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="cVc-In-IFv"/>
                     </view>
                     <connections>
+                        <outlet property="catchStatus" destination="wbW-Zj-2V9" id="AHv-lv-cJd"/>
                         <outlet property="nameLabel" destination="Zti-lO-HCX" id="4yz-Df-XpM"/>
                         <outlet property="numberLabel" destination="Sja-25-iqf" id="cj5-fb-cuF"/>
                         <outlet property="type1Label" destination="pSm-0Z-rVe" id="OOi-5I-FB3"/>

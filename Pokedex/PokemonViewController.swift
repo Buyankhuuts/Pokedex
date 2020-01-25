@@ -7,18 +7,42 @@ class PokemonViewController: UIViewController {
     @IBOutlet var numberLabel: UILabel!
     @IBOutlet var type1Label: UILabel!
     @IBOutlet var type2Label: UILabel!
-
+    @IBOutlet var catchStatus: UILabel!
+    var toggleCaught = false
+    
+    
+    @IBAction func catchThePokemon(_ sender: Any) {
+        if toggleCaught == false {
+            
+            toggleCaught = true
+            catchStatus.text = "Caught"
+            
+        }
+        else
+        {
+            toggleCaught = false
+            catchStatus.text = ""
+            
+        }
+    }
+    
+   
+    
     func capitalize(text: String) -> String {
         return text.prefix(1).uppercased() + text.dropFirst()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
+        
+        catchStatus.text = ""
         nameLabel.text = ""
         numberLabel.text = ""
         type1Label.text = ""
         type2Label.text = ""
+        
+
+        
 
         loadPokemon()
     }
@@ -35,6 +59,7 @@ class PokemonViewController: UIViewController {
                     self.navigationItem.title = self.capitalize(text: result.name)
                     self.nameLabel.text = self.capitalize(text: result.name)
                     self.numberLabel.text = String(format: "#%03d", result.id)
+                    
 
                     for typeEntry in result.types {
                         if typeEntry.slot == 1 {

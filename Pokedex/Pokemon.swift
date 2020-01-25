@@ -23,3 +23,4 @@ struct PokemonTypeEntry: Codable {
 struct PokemonType: Codable {
     let name: String
 }
+
