@@ -13,6 +13,7 @@ class PokemonListViewController: UITableViewController, UISearchBarDelegate {
     
     
     
+    
     func capitalize(text: String) -> String {
         return text.prefix(1).uppercased() + text.dropFirst()
     }
@@ -36,7 +37,7 @@ class PokemonListViewController: UITableViewController, UISearchBarDelegate {
                 self.pokemon = entries.results
                 self.searchPokemon = self.pokemon
                 DispatchQueue.main.async {
-                    self.tableView.reloadData()
+                self.tableView.reloadData()
                 }
             }
             catch let error {
@@ -94,9 +95,6 @@ class PokemonListViewController: UITableViewController, UISearchBarDelegate {
         }
         
         
-        for pokeGeezer in searchPokemon {
-            print(pokeGeezer.name)
-        }
         
         
         tableView.reloadData()
